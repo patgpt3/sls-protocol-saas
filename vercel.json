@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "name": "sls-protocol-saas",
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/next"
+    }
+  ],
+  "env": {
+    "NEXT_PUBLIC_API_URL": "@next_public_api_url",
+    "NEXT_PUBLIC_ACCESS_SERVER_URL": "@next_public_access_server_url",
+    "NEXT_PUBLIC_STREAM_API_URL": "@next_public_stream_api_url",
+    "NEXT_PUBLIC_MIDDLEWARE_API_URL": "@next_public_middleware_api_url",
+    "NEXT_PUBLIC_SENDGRID_API_KEY": "@next_public_sendgrid_api_key",
+    "NEXT_PUBLIC_AWS_REGION": "@next_public_aws_region",
+    "NEXT_PUBLIC_AWS_S3_BUCKET": "@next_public_aws_s3_bucket"
+  },
+  "headers": [
+    {
+      "source": "/_next/static/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ]
+} 
